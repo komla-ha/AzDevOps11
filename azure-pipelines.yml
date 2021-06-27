@@ -11,21 +11,21 @@ pool:
   vmImage: "ubuntu-latest"
 
 variables:
-  - group: ServerAutomationDemo
+  - group: serverautomation
   - name: azure_resource_group_name
     value: "ServerProvisionTesting-$(Build.BuildId)"
   - name: subscription_id
-    value: "XXXXXXXXXXXXXXXXXXXXXXXXXX"
+    value: "911edaf9-130c-4246-ba74-f1c5bafca74e"
   - name: application_id
-    value: "XXXXXXXXXXXXXXXXXXXXXXXXXX"
+    value: "a410f269-f005-45ed-8ac7-c1a341214c4f"
   - name: tenant_id
-    value: "XXXXXXXXXXXXXXXXXXXXXXXXXX"
+    value: "cb1543a2-0a34-4555-8179-0ef81f3949df"
 
 steps:
   - task: PowerShell@2
     inputs:
       filePath: "connect-azure.ps1"
-      arguments: '-ServicePrincipalPassword "$(ServerAutomationDemo-AppPw)" -SubscriptionId $(subscription_id) -ApplicationId $(application_id) -TenantId $(tenant_id)'
+      arguments: '-ServicePrincipalPassword "$(SPAppPw)" -SubscriptionId $(subscription_id) -ApplicationId $(application_id) -TenantId $(tenant_id)'
   - task: PowerShell@2
     inputs:
       targetType: "inline"
