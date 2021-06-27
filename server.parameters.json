@@ -8,9 +8,9 @@
         "adminPassword": {
             "reference": {
                 "keyVault": {
-                    "id": "/subscriptions/<your_subscription_id>/resourceGroups/ServerAutomationDemo/providers/Microsoft.KeyVault/vaults/ServerAutomationDemo-KV"
+                    "id": "/subscriptions/911edaf9-130c-4246-ba74-f1c5bafca74e/resourceGroups/AzDevOps11_proj/providers/Microsoft.KeyVault/vaults/khkhazdevops"
                 },
-                "secretName": "StandardVmAdminPassword"
+                "secretName": "VmAdminPassword"
             }
         },
         "vmName": {
